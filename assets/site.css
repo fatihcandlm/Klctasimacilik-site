@@ -86,7 +86,7 @@ a { text-decoration: none; }
 
 .brand { display: block; justify-self: start; }
 .brand img {
-  width: clamp(120px, 11vw, 168px);
+  width: clamp(150px, 14vw, 215px);
   height: auto;
   filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .45));
 }
@@ -134,21 +134,25 @@ a { text-decoration: none; }
   letter-spacing: .12em;
 }
 
-/* Orta genişlikte telefon metni yer kaplamasın, menü sıkışmasın */
-@media (max-width: 1320px) {
+/* Ekran daraldıkça sağdaki blok sırayla sadeleşir, menü sıkışmasın */
+@media (max-width: 1440px) {
   .head-tel small { display: none; }
 }
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
   .head-cta { display: none; }
 }
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
+  /* Sarmayı kapalı tutuyoruz: menü ikinci satıra düşünce başlık yüksekliği
+     zıplıyor ve düzen bozuluyor. Sığmadığı noktada hamburger devreye girer. */
+  flex-wrap: nowrap;
   align-items: center;
-  gap: var(--space-4) clamp(10px, 1.6vw, 34px);
+  /* Boşluk görüntü alanına göre büyüyordu ama kapsayıcı 1560px'te sabit;
+     geniş ekranda menü taşıyordu. Üst sınır daraltıldı. */
+  gap: clamp(9px, 1.05vw, 21px);
   font-family: var(--font-heading);
-  font-size: clamp(12px, 1vw, 15px);
+  font-size: clamp(12px, .95vw, 14px);
   letter-spacing: .16em;
   text-transform: uppercase;
   font-weight: 500;
