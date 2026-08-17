@@ -1,6 +1,4 @@
-# site
-
-klctasimacilik
+# Klctasimacilik-site
 
 KLC Taşımacılık kurumsal web sitesi — Ankara merkezli personel servisi,
 öğrenci taşımacılığı, VIP transfer ve grup taşıma hizmetleri.
@@ -21,6 +19,9 @@ bağımlılık yok. Klasörü herhangi bir statik hosting'e yüklemek yeterli.
 | `tesekkurler.html` | Form gönderimi sonrası |
 | `404.html` | Sayfa bulunamadı |
 
+**Önemli:** `index.html` deponun kökünde durmalıdır. Alt klasöre taşınırsa
+Vercel ve benzeri servisler siteyi bulamaz.
+
 ## Çalıştırma
 
 ```bash
@@ -31,11 +32,18 @@ Sonra: http://localhost:4000
 
 ## Yayına alma
 
-Netlify için hazır: teklif formu Netlify Forms altyapısını kullanır,
-gönderim sonrası `tesekkurler.html` sayfasına yönlenir.
+**Vercel:** Depoyu içe aktar, hiçbir build ayarı gerekmez. Root Directory
+boş kalmalı (dosyalar zaten kökte).
 
-Ayrıntılı kurulum, düzenleme ve yapılacaklar listesi için **`OKUBENI.md`**
-dosyasına bakın.
+**Netlify:** Depoyu içe aktar; build command ve publish directory boş
+bırakılır. Teklif formu Netlify Forms altyapısını kullanır, gönderim
+sonrası `tesekkurler.html` sayfasına yönlenir.
+
+> Not: Teklif formu Netlify'a özeldir. Vercel'de yayınlanırsa form
+> gönderimleri hiçbir yere ulaşmaz; telefon ve WhatsApp çalışmaya devam eder.
+> Vercel'de form istenirse bir form servisine (ör. Formspree) bağlanmalıdır.
+
+Ayrıntılı kurulum, düzenleme ve yapılacaklar listesi için **`OKUBENI.md`**.
 
 ## Teknik notlar
 
@@ -43,4 +51,6 @@ dosyasına bakın.
 - Barlow / Barlow Condensed fontları site içinde barındırılıyor
 - `assets/base.css` orijinal tasarım sisteminden alındı, dokunulmuyor
 - `assets/site.css` bu proje için yazılan katman
+- İletişim bilgileri sayfalara tek kaynaktan yayılır; değişiklik gerekirse
+  tüm sayfalarda birlikte güncellenmelidir
 - Tüm sayfalar WCAG kontrast eşiğini geçiyor, mobilde yatay kaydırma yok
