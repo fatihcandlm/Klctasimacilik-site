@@ -95,6 +95,19 @@ Sitede gerçek bilgi bekleyen yerler turuncu rozetlerle işaretli:
 - [ ] **İstatistikler** — 120+ araç, 15 yıl, %99 gibi rakamlar şablondan
       geldi; doğrulanmalı.
 
+## Netlify'a yayınlama
+
+Site Netlify için hazırlandı. `netlify.com` → giriş yap → **Add new site →
+Deploy manually** → bu klasörü sürükle bırak. Dakikalar içinde bir adres verir.
+
+Sonrasında Netlify panelinde:
+- **Forms** sekmesinde teklif talepleri birikir
+- **Forms → Settings → Form notifications** ile e-postana yönlendirebilirsin
+- **Domain settings** ile kendi alan adını (`klctasimacilik.com`) bağlarsın
+
+Güncelleme yapmak için klasörü tekrar sürükle bırak, ya da GitHub deposuna
+bağla; o zaman her `git push` otomatik yayınlanır.
+
 ## Teklif formu nasıl çalışıyor
 
 Statik sitede sunucu tarafı yoktur, form kendi başına mesaj gönderemez.

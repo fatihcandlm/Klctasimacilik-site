@@ -78,15 +78,18 @@
     });
 
     /* --- Teklif formu -------------------------------------------------
-       Statik sitede sunucu tarafı yoktur; form kendi başına mesaj gönderemez.
-       Doldurulan bilgiler burada bir e-posta taslağına dönüştürülür ve
-       kullanıcının e-posta programında hazır olarak açılır. */
+       Yayında (Netlify) form normal şekilde POST edilir ve gönderimler
+       Netlify panelinde toplanır. Yerelde test ederken Netlify altyapısı
+       olmadığı için gönderim başarısız olurdu; o durumda bilgiler e-posta
+       taslağına dönüştürülüp kullanıcının posta programında açılır. */
     var form = document.querySelector("[data-teklif]");
+    var yerelMi =
+      location.protocol === "file:" ||
+      location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1";
 
     if (form) {
       form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
         var d = new FormData(form);
         var al = function (k) { return (d.get(k) || "").toString().trim(); };
 
@@ -97,6 +100,7 @@
         var zorunlu = [["ad", "Ad Soyad"], ["telefon", "Telefon"]];
         for (var i = 0; i < zorunlu.length; i++) {
           if (al(zorunlu[i][0]) === "") {
+            e.preventDefault();
             var alan = form.elements[zorunlu[i][0]];
             alan.setCustomValidity(zorunlu[i][1] + " alanını doldurun.");
             alan.reportValidity();
@@ -104,6 +108,12 @@
             return;
           }
         }
+
+        // Yayında: forma dokunma, Netlify'a normal POST edilsin.
+        if (!yerelMi) return;
+
+        // Yerelde: e-posta taslağı olarak aç.
+        e.preventDefault();
 
         var satirlar = [
           "Ad Soyad: " + al("ad"),

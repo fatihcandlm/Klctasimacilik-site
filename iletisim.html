@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>İletişim — KLC Taşımacılık</title>
 <meta name="description" content="KLC Taşımacılık iletişim bilgileri ve teklif formu. Personel servisi ve öğrenci taşımacılığı için güzergâh planı talep edin.">
-<link rel="icon" href="assets/logo.png">
+<link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -30,7 +30,7 @@
       </nav>
 
       <a href="index.html" class="brand">
-        <img src="assets/logo.png" alt="KLC Taşımacılık">
+        <img src="assets/logo.webp" alt="KLC Taşımacılık">
       </a>
 
       <nav class="nav">
@@ -93,9 +93,18 @@
         <div>
           <div class="kicker">Teklif Formu</div>
           <h2 class="h2">Bilgilerinizi bırakın</h2>
-          <p class="lede">Formu doldurduğunuzda bilgiler e-posta programınızda hazır bir mesaj olarak açılır; göndere basmanız yeterlidir.</p>
+          <p class="lede">Formu doldurup gönderin; talebiniz doğrudan bize ulaşır, 24 saat içinde dönüş yapıyoruz.</p>
 
-          <form class="form" data-teklif style="margin-top:var(--space-8)">
+          <form class="form" data-teklif style="margin-top:var(--space-8)"
+                name="teklif" method="POST"
+                data-netlify="true" netlify-honeypot="bot-field"
+                action="tesekkurler.html">
+            <!-- Netlify form altyapısı için gerekli: gönderimin hangi forma ait
+                 olduğunu bildirir. Silinmemeli. -->
+            <input type="hidden" name="form-name" value="teklif">
+            <!-- Spam tuzağı: gerçek kullanıcı göremez, botlar doldurur ve
+                 doldurulmuş gönderimler otomatik elenir. -->
+            <p hidden><label>Bu alanı boş bırakın <input name="bot-field"></label></p>
             <div class="row">
               <div>
                 <label for="ad">Ad Soyad</label>
@@ -144,15 +153,15 @@
 
         <div>
           <div class="duotone blueprint shot" style="aspect-ratio:3/4">
-            <img src="assets/hero-filo.png" alt="KLC Taşımacılık araç filosu">
+            <img src="assets/hero-filo.webp" alt="KLC Taşımacılık araç filosu">
             <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           </div>
 
           <div class="form-note" style="margin-top:var(--space-8)">
-            <b>Formun çalışması hakkında:</b> Bu site sunucu tarafı olmayan statik bir sitedir, bu yüzden form
-            kendi başına mesaj gönderemez. Şu an form, doldurduğunuz bilgileri e-posta programınızda hazır
-            bir mesaj olarak açar. Formun doğrudan kutunuza düşmesini isterseniz bir form servisine
-            (ör. Formspree) bağlanması ya da sitenin sunucu tarafı olan bir yere taşınması gerekir.
+            <b>Formun çalışması hakkında:</b> Site yayına alındığında gönderilen form doğrudan
+            Netlify paneline düşer ve istenirse e-postaya yönlendirilir. Yerelde denerken
+            (localhost) Netlify altyapısı olmadığı için form, bilgileri e-posta programınızda
+            hazır bir mesaj olarak açar — böylece test edebilirsiniz.
           </div>
         </div>
       </div>
@@ -182,7 +191,7 @@
 <footer class="site-foot">
   <div class="wrap foot-main">
     <div>
-      <img src="assets/logo.png" alt="KLC Taşımacılık">
+      <img src="assets/logo.webp" alt="KLC Taşımacılık">
       <p class="about">Ankara merkezli personel servisi, öğrenci taşımacılığı, VIP transfer ve grup taşıma hizmetleri.</p>
     </div>
     <div>
