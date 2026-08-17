@@ -204,7 +204,7 @@ a { text-decoration: none; }
   font-size: 12px;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--color-neutral-600);
+  color: var(--color-neutral-700);
   margin-top: 3px;
 }
 
@@ -459,7 +459,7 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border
 .ref .meta {
   margin-top: auto; padding-top: var(--space-4);
   border-top: 1px solid var(--color-neutral-200);
-  font-size: 13px; color: var(--color-neutral-600);
+  font-size: 13px; color: var(--color-neutral-700);
 }
 
 /* Alıntı */
@@ -483,7 +483,7 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border
   padding: 7px 14px;
 }
 .post .body { padding: var(--space-8) clamp(18px, 2vw, 26px); display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
-.post .date { font-family: var(--font-heading); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--color-neutral-600); }
+.post .date { font-family: var(--font-heading); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--color-neutral-700); }
 .post b { font-family: var(--font-heading); font-weight: 600; font-size: 21px; line-height: 1.2; }
 .post p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700); flex: 1; }
 
@@ -493,7 +493,7 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border
 .info-box .val { font-family: var(--font-heading); font-size: clamp(19px, 1.8vw, 24px); margin-top: var(--space-3); color: var(--color-text); display: block; }
 a.info-box { color: inherit; transition: border-color .18s, transform .18s; }
 a.info-box:hover { border-color: var(--brand); transform: translateY(-3px); }
-.info-box .note { margin: var(--space-3) 0 0; font-size: 14px; color: var(--color-neutral-600); }
+.info-box .note { margin: var(--space-3) 0 0; font-size: 14px; color: var(--color-neutral-700); }
 
 /* Form */
 .form { display: grid; gap: var(--space-6); }
@@ -760,7 +760,9 @@ a.info-box:hover { border-color: var(--brand); transform: translateY(-3px); }
   font-size: 11px;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--color-neutral-600);
+  /* neutral-600 beyaz zeminde 4.28 kontrast veriyordu (WCAG eşiği 4.5).
+     Küçük punto olduğu için bir ton koyusu kullanılır. */
+  color: var(--color-neutral-700);
   margin-top: 7px;
 }
 
