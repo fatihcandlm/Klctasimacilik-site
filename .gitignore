@@ -1,0 +1,15 @@
+# Orijinal paketin yedeği — 3,4 MB, diskte dursun ama depoya girmesin.
+# Geri dönüş noktası olarak Masaüstü'ndeki klasörde saklanıyor.
+index.html.yedek-*
+
+# İşletim sistemi ve editör artıkları
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Geçici dosyalar
+*.tmp
+*.log
+*~
