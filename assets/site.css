@@ -260,48 +260,6 @@ a { text-decoration: none; }
    HERO
    ========================================================================== */
 
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: var(--navy);
-  overflow: hidden;
-}
-.hero-img { position: absolute; inset: 0; }
-.hero-img img { width: 100%; height: 100%; object-fit: cover; }
-.hero-scrim {
-  position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg,
-    rgba(var(--navy-rgb), .72) 0%,
-    rgba(var(--navy-rgb), .34) 40%,
-    rgba(var(--navy-rgb), .44) 72%,
-    rgba(var(--navy-rgb), .76) 100%);
-}
-.hero-copy {
-  position: relative;
-  width: 100%; max-width: 1100px;
-  margin: auto auto 0;
-  padding: 40px var(--pad-x) 80px;
-  text-align: center;
-  color: #fff;
-}
-.hero-copy h1 {
-  font-family: var(--font-heading);
-  font-weight: 400;
-  font-size: clamp(42px, 5.4vw, 80px);
-  line-height: 1.08;
-  margin: 0;
-  text-wrap: balance;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, .35);
-}
-.hero-copy p {
-  font-size: 18px;
-  color: rgba(255, 255, 255, .92);
-  margin: var(--space-8) 0 0;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, .4);
-}
-
 /* Alt sayfaların kısa hero'su */
 .page-hero {
   position: relative;
@@ -424,21 +382,6 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border
   font-family: var(--font-heading);
   font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
   color: var(--brand); margin-top: var(--space-4);
-}
-
-/* İstatistik şeridi */
-.stats { position: relative; width: 100%; border-top: 1px solid rgba(255, 255, 255, .16); }
-.stats-in {
-  max-width: var(--wrap); margin: 0 auto;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-}
-.stat { padding: var(--space-8) clamp(20px, 2.4vw, 28px); border-right: 1px solid rgba(255, 255, 255, .16); }
-.stat:last-child { border-right: 0; }
-.stat b { display: block; font-family: var(--font-heading); font-weight: 400; font-size: 34px; color: #fff; }
-.stat span {
-  display: block; font-family: var(--font-heading); font-size: 12px;
-  letter-spacing: .24em; text-transform: uppercase;
-  color: var(--color-accent-200); margin-top: 4px;
 }
 
 /* Butonlar */
@@ -598,9 +541,23 @@ a.info-box:hover { border-color: var(--brand); transform: translateY(-3px); }
   letter-spacing: .22em; text-transform: uppercase;
   color: var(--color-accent-300); margin: 0 0 var(--space-6);
 }
-.foot-main ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.foot-main ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
 .foot-main a, .foot-main li { color: rgba(255, 255, 255, .78); font-size: 15px; }
+.foot-main a { display: inline-block; }
 .foot-main a:hover { color: #fff; }
+
+/* Dokunmatik cihazda bağlantılar parmakla rahat basılacak yükseklikte olmalı.
+   Düz metin bağlantılar 18px kalıyordu; hedef alanı 44px'e çıkarılır. */
+@media (hover: none), (max-width: 860px) {
+  .foot-main a {
+    padding-block: 12px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .foot-main ul { gap: 0; }
+  .foot-main li { min-height: 44px; display: flex; align-items: center; }
+}
 .foot-main img { width: 170px; margin-bottom: var(--space-6); }
 .foot-main .about { color: rgba(255, 255, 255, .7); font-size: 15px; line-height: 1.6; margin: 0; }
 
@@ -627,6 +584,295 @@ a.info-box:hover { border-color: var(--brand); transform: translateY(-3px); }
 @media print {
   .site-head, .mobnav, .burger, .site-foot { display: none; }
   body { background: #fff; }
+}
+
+/* ==========================================================================
+   ANA SAYFA — özgün düzen
+   Şablonun ortalanmış tam ekran hero'su yerine asimetrik, sola hizalı bir
+   kurgu. Güzergâh motifi firmanın işini anlatır ve siteyi benzerlerinden
+   ayırır. Mobil önce kurgulanmıştır.
+   ========================================================================== */
+
+/* --- Hero --------------------------------------------------------------- */
+
+.h-hero {
+  position: relative;
+  background: var(--navy);
+  color: #fff;
+  overflow: hidden;
+  /* 100vh KULLANILMIYOR: mobil tarayıcıların adres çubuğu yüzünden içerik
+     kayar. Doğal yükseklik + nefes payı daha güvenli. */
+  padding-block: clamp(40px, 7vw, 96px) 0;
+}
+
+/* Fotoğraf mobilde arka planda, geniş ekranda sağ yarıda */
+.h-hero-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.h-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+.h-hero-img::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(var(--navy-rgb), .92) 0%,
+    rgba(var(--navy-rgb), .82) 45%,
+    rgba(var(--navy-rgb), .95) 100%);
+}
+
+.h-hero-in {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.h-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--color-accent-200);
+}
+.h-hero-kicker::before {
+  content: "";
+  width: 34px; height: 2px;
+  background: var(--brand);
+}
+
+.h-hero h1 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(34px, 6vw, 66px);
+  line-height: 1.04;
+  margin: var(--space-6) 0 0;
+  text-wrap: balance;
+}
+.h-hero h1 em {
+  font-style: normal;
+  color: var(--brand);
+}
+
+.h-hero p.lede {
+  color: rgba(255, 255, 255, .84);
+  font-size: clamp(16px, 2.2vw, 19px);
+  max-width: 52ch;
+}
+
+.h-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: clamp(24px, 4vw, 40px);
+}
+/* Dar ekranda butonlar tam genişlik — parmakla basması kolay olsun */
+@media (max-width: 480px) {
+  .h-cta { flex-direction: column; align-items: stretch; }
+  .h-cta .btn-red,
+  .h-cta .btn-line { justify-content: center; }
+}
+
+/* --- Güzergâh motifi ---------------------------------------------------- */
+
+.route {
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+  padding: clamp(20px, 3vw, 28px) clamp(18px, 2.5vw, 26px) clamp(20px, 3vw, 28px) 44px;
+  /* Fotoğrafın üzerine geldiği için kendi zemini olmalı, yoksa okunmuyor */
+  background: rgba(var(--navy-rgb), .72);
+  border-left: 2px solid var(--brand);
+  backdrop-filter: blur(2px);
+}
+/* Dikey hat (mobil) */
+.route::before {
+  content: "";
+  position: absolute;
+  left: 24px; top: clamp(28px, 4vw, 38px); bottom: clamp(28px, 4vw, 38px);
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, .5) 0 6px,
+    transparent 6px 12px);
+}
+.route-stop {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: .04em;
+  color: rgba(255, 255, 255, .9);
+}
+.route-stop::before {
+  content: "";
+  position: absolute;
+  left: -26px; top: 50%;
+  translate: 0 -50%;
+  width: 13px; height: 13px;
+  border: 2px solid var(--brand);
+  background: var(--navy);
+  border-radius: 50%;
+}
+.route-stop:last-child::before { background: var(--brand); }
+.route-stop small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, .58);
+  margin-top: 2px;
+}
+
+/* --- Rakam şeridi (hero ile bölüm arasında oturur) ---------------------- */
+
+.h-stats {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(40px, 6vw, 72px);
+  background: #fff;
+  border: 1px solid var(--color-divider);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.h-stat {
+  padding: clamp(18px, 3vw, 28px) clamp(16px, 2.5vw, 26px);
+  border-right: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+}
+.h-stat:nth-child(2n) { border-right: 0; }
+.h-stat:nth-last-child(-n+2) { border-bottom: 0; }
+.h-stat b {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1;
+  color: var(--navy);
+}
+.h-stat span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+  margin-top: 7px;
+}
+
+/* --- Hizmet listesi (kart ızgarası yerine editoryal satırlar) ----------- */
+
+.svc-list { border-top: 1px solid var(--color-neutral-300); }
+
+.svc {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px clamp(16px, 3vw, 32px);
+  align-items: start;
+  padding: clamp(22px, 3.5vw, 34px) 0;
+  border-bottom: 1px solid var(--color-neutral-300);
+  color: inherit;
+  transition: background .18s, padding-left .18s;
+}
+.svc:hover {
+  background: var(--color-neutral-100);
+  padding-left: clamp(8px, 1.5vw, 18px);
+}
+.svc-no {
+  grid-row: span 2;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--brand);
+  line-height: 1;
+  padding-top: 4px;
+  min-width: 2.2ch;
+}
+.svc-t {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.15;
+  color: var(--color-text);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.svc-t .go {
+  font-size: 13px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--brand);
+  opacity: 0;
+  transition: opacity .18s;
+}
+.svc:hover .svc-t .go,
+.svc:focus-visible .svc-t .go { opacity: 1; }
+.svc-d {
+  margin: 0;
+  color: var(--color-neutral-700);
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+/* Dokunmatik cihazda hover yok — ok işareti hep görünsün */
+@media (hover: none) {
+  .svc-t .go { opacity: .75; }
+}
+
+/* --- Öne çıkan bant ----------------------------------------------------- */
+
+.band {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.band::after {
+  content: "";
+  position: absolute;
+  right: -120px; top: -120px;
+  width: 380px; height: 380px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  rotate: 45deg;
+  pointer-events: none;
+}
+.band-in {
+  position: relative;
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
+  padding-block: clamp(44px, 6vw, 84px);
+}
+
+/* --- Geniş ekran düzenlemeleri ----------------------------------------- */
+
+@media (min-width: 860px) {
+  .h-hero { padding-block: clamp(64px, 7vw, 110px) 0; }
+
+  /* Fotoğraf sağ yarıya çekilir, sol taraf düz lacivert kalır */
+  .h-hero-img { left: 42%; }
+  .h-hero-img::after {
+    background: linear-gradient(90deg,
+      rgba(var(--navy-rgb), 1) 0%,
+      rgba(var(--navy-rgb), .55) 38%,
+      rgba(var(--navy-rgb), .35) 100%);
+  }
+  .h-hero-in { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); }
+
+  /* Güzergâh motifi dikey kalır — dar sütunda yatay düzende metin taşıyordu.
+     Dikey hâli hem sığar hem de "duraklar" fikrini daha iyi anlatır. */
+  .h-stats { grid-template-columns: repeat(4, 1fr); }
+  .h-stat { border-bottom: 0; }
+  .h-stat:nth-child(2n) { border-right: 1px solid var(--color-divider); }
+  .h-stat:last-child { border-right: 0; }
+
+  .band-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
 }
 
 /* ==========================================================================

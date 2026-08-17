@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KLC Taşımacılık — Ankara Personel Servisi ve Öğrenci Taşımacılığı</title>
-<meta name="description" content="Ankara'da personel servisi, öğrenci taşımacılığı, VIP transfer ve grup taşıma hizmetleri. 120+ araçlık filo, konum takibi ve aylık raporlama.">
+<meta name="description" content="Ankara'da personel servisi, öğrenci taşımacılığı, VIP transfer ve grup taşıma. 120+ araçlık filo, konum takibi ve aylık performans raporu.">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/site.css">
@@ -12,13 +12,7 @@
 <body>
 <a class="skip" href="#icerik">İçeriğe geç</a>
 
-<div class="hero">
-  <div class="hero-img duotone">
-    <img src="assets/hero-filo.webp" alt="KLC Taşımacılık servis araçları filosu">
-  </div>
-  <div class="hero-scrim"></div>
-
-  <header class="site-head over-hero">
+  <header class="site-head">
     <div class="head-inner">
       <nav class="nav nav-left">
         <a href="index.html" class="current">Ana Sayfa</a>
@@ -66,26 +60,44 @@
     </div>
   </header>
 
-  <section class="hero-copy" id="icerik">
-    <h1>Ankara<br>Personel Servisi Taşımacılığı</h1>
-    <p>Türkiye'nin Lideri | KLC TAŞIMACILIK'a Hoşgeldiniz.</p>
-    <div style="display:flex;justify-content:center;gap:var(--space-6);flex-wrap:wrap;margin-top:var(--space-8)">
-      <a href="iletisim.html" class="btn-red">Teklif Al <span>›</span></a>
-      <a href="hizmetler.html" class="btn-line">Hizmetlerimiz</a>
+<main id="icerik">
+  <section class="h-hero">
+    <div class="h-hero-img">
+      <img src="assets/hero-filo.webp" alt="KLC Taşımacılık servis araçları filosu" fetchpriority="high">
+    </div>
+
+    <div class="wrap">
+      <div class="h-hero-in">
+        <div>
+          <span class="h-hero-kicker">Ankara · 15 yıldır yolda</span>
+          <h1>Personel servisi,<br>saat tutan bir <em>operasyondur</em></h1>
+          <p class="lede">
+            Güzergâhı haritada çizip bırakmıyoruz. Sahada gerçek trafik saatinde
+            deniyor, konum takibiyle izliyor ve her ay raporluyoruz.
+          </p>
+          <div class="h-cta">
+            <a href="iletisim.html" class="btn-red">Teklif Al <span>›</span></a>
+            <a href="hizmetler.html" class="btn-line">Hizmetlerimiz</a>
+          </div>
+        </div>
+
+        <div class="route" aria-label="Güzergâh kurulum aşamaları">
+          <div class="route-stop">İhtiyaç analizi<small>Personel dağılımı ve vardiya saatleri</small></div>
+          <div class="route-stop">Güzergâh tasarımı<small>Binek noktaları ve sefer süreleri</small></div>
+          <div class="route-stop">Saha denemesi<small>Gerçek trafikte doğrulama</small></div>
+          <div class="route-stop">Devreye alma<small>Araç ataması ve aylık rapor</small></div>
+        </div>
+      </div>
+
+      <div class="h-stats">
+        <div class="h-stat"><b>120+</b><span>Araç Filosu</span></div>
+        <div class="h-stat"><b>15 Yıl</b><span>Sektör Deneyimi</span></div>
+        <div class="h-stat"><b>7/24</b><span>Operasyon Takibi</span></div>
+        <div class="h-stat"><b>%99</b><span>Zamanında Varış</span></div>
+      </div>
     </div>
   </section>
 
-  <div class="stats">
-    <div class="stats-in">
-      <div class="stat"><b>120+</b><span>Araç Filosu</span></div>
-      <div class="stat"><b>15 Yıl</b><span>Sektör Deneyimi</span></div>
-      <div class="stat"><b>7/24</b><span>Operasyon Takibi</span></div>
-      <div class="stat"><b>%99</b><span>Zamanında Varış</span></div>
-    </div>
-  </div>
-</div>
-
-<main>
   <section class="sec">
     <div class="wrap">
       <div class="sec-head">
@@ -96,59 +108,77 @@
         <p>Her hizmet kendi güzergâh planı, araç tipi ve sürücü kadrosu ile yürütülür.</p>
       </div>
 
-      <div class="grid g-4">
-        <a href="hizmetler.html#personel-servisi" class="card blueprint">
-          <div class="card-kicker">01</div>
-          <div class="card-title">Personel Servisi</div>
-          <p class="card-body">Vardiya saatlerine göre kurulan sabit güzergâhlar, binek noktası takibi ve aylık raporlama.</p>
-          <div class="card-more">İncele ›</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div class="svc-list">
+        <a class="svc" href="hizmetler.html#personel-servisi">
+          <span class="svc-no">01</span>
+          <span class="svc-t">Personel Servisi <span class="go">İncele ›</span></span>
+          <p class="svc-d">Vardiya saatlerinize göre kurulan sabit güzergâhlar, yürüme mesafesinde binek noktaları ve aylık performans raporu.</p>
         </a>
-        <a href="hizmetler.html#ogrenci-tasimaciligi" class="card blueprint">
-          <div class="card-kicker">02</div>
-          <div class="card-title">Öğrenci Taşımacılığı</div>
-          <p class="card-body">Okul ve kurs güzergâhları, rehber personel, veli bilgilendirme ve mevzuata uygun araçlar.</p>
-          <div class="card-more">İncele ›</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a class="svc" href="hizmetler.html#ogrenci-tasimaciligi">
+          <span class="svc-no">02</span>
+          <span class="svc-t">Öğrenci Taşımacılığı <span class="go">İncele ›</span></span>
+          <p class="svc-d">Mevzuata uygun araçlar, her araçta rehber personel, biniş-iniş kaydı ve veli bilgilendirme.</p>
         </a>
-        <a href="hizmetler.html#vip-transfer" class="card blueprint">
-          <div class="card-kicker">03</div>
-          <div class="card-title">VIP Transfer</div>
-          <p class="card-body">Havalimanı karşılama, misafir ve yönetici transferleri, tek araç veya konvoy düzeni.</p>
-          <div class="card-more">İncele ›</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a class="svc" href="hizmetler.html#vip-transfer">
+          <span class="svc-no">03</span>
+          <span class="svc-t">VIP Transfer <span class="go">İncele ›</span></span>
+          <p class="svc-d">Uçuş numarası üzerinden rötar takibi, havalimanı karşılama, yönetici ve misafir transferleri.</p>
         </a>
-        <a href="hizmetler.html#grup-tur" class="card blueprint">
-          <div class="card-kicker">04</div>
-          <div class="card-title">Grup ve Tur Taşıma</div>
-          <p class="card-body">Fabrika gezileri, organizasyon ve şehir dışı grup taşımaları için otobüs ve midibüs filosu.</p>
-          <div class="card-more">İncele ›</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a class="svc" href="hizmetler.html#grup-tur">
+          <span class="svc-no">04</span>
+          <span class="svc-t">Grup ve Tur Taşıma <span class="go">İncele ›</span></span>
+          <p class="svc-d">Fabrika gezisi, fuar ve şehir dışı organizasyonlar için otobüs ve midibüs filosu.</p>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-tight">
+  <section class="band">
+    <div class="wrap band-in">
+      <div>
+        <div class="kicker">Farkımız</div>
+        <h2 class="h2">Servisi tahmine değil, veriye bağlıyoruz</h2>
+        <p class="lede">
+          Her araç konum takip sistemine bağlı. Sefer başlangıç ve bitiş saatleri
+          kayıt altında, geriye dönük sorgulanabiliyor. Ay sonunda güzergâh bazında
+          zamanında varış oranını kurumla paylaşıyoruz.
+        </p>
+        <div style="margin-top:var(--space-8)">
+          <a href="hakkimizda.html" class="btn-line">Nasıl Çalışıyoruz</a>
+        </div>
+      </div>
+      <ul class="ticks">
+        <li>Arıza halinde 30 dakika içinde yedek araç</li>
+        <li>SRC ve psikoteknik belgeli sürücü kadrosu</li>
+        <li>Her kuruma tek operasyon sorumlusu</li>
+        <li>Aylık zamanında varış ve doluluk raporu</li>
+        <li>Araç yaşı, muayene ve sigorta takibi</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
     <div class="wrap">
       <div class="grid g-2 g-mid g-wide">
         <div class="duotone blueprint shot">
-          <img src="assets/hero-filo.webp" alt="KLC Taşımacılık araç filosu">
+          <img src="assets/hero-filo.webp" alt="KLC Taşımacılık araç filosu" loading="lazy">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
         </div>
         <div>
-          <div class="kicker">Hakkımızda</div>
-          <h2 class="h2">Operasyonu ölçen bir taşıma şirketi</h2>
-          <div class="prose" style="margin-top:var(--space-6)">
-            <p>KLC TAŞIMACILIK, kurumların personel ulaşımını sabit güzergâhlar ve takip edilebilir bir operasyon planı üzerinden yürütür. Her araç konum takip sistemine bağlıdır, her güzergâh aylık performans raporuyla değerlendirilir.</p>
-          </div>
+          <div class="kicker">Referanslarımız</div>
+          <h2 class="h2">Bizi tercih eden kurumlar</h2>
+          <p class="lede">
+            Sanayi, eğitim, sağlık ve kamu kurumlarıyla uzun süreli servis
+            sözleşmeleri yürütüyoruz. Bazı operasyonlar 2018'den bu yana kesintisiz
+            devam ediyor.
+          </p>
           <div class="feats">
-            <div><b>Konum takibi</b><span>Tüm filoda araç takip</span></div>
-            <div><b>Yedek araç</b><span>Arıza halinde 30 dk</span></div>
-            <div><b>Sürücü kadrosu</b><span>SRC ve psikoteknik belgeli</span></div>
+            <div><b>66</b><span>Aktif güzergâh</span></div>
+            <div><b>2.400+</b><span>Günlük yolcu</span></div>
+            <div><b>6</b><span>Sektör</span></div>
           </div>
           <div style="margin-top:var(--space-8)">
-            <a href="hakkimizda.html" class="btn-red">Bizi Tanıyın <span>›</span></a>
+            <a href="referanslar.html" class="btn-red">Referansları Gör <span>›</span></a>
           </div>
         </div>
       </div>
@@ -156,63 +186,15 @@
   </section>
 
   <section class="sec sec-alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <div class="kicker">Referanslarımız</div>
-          <h2 class="h2">Bizi tercih eden kurumlar</h2>
-        </div>
-        <p>Uzun süreli servis sözleşmeleriyle çalıştığımız kurumlardan bazıları.</p>
+    <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-8)">
+      <div>
+        <h2 class="h2">Güzergâhınız için teklif alın</h2>
+        <p class="lede">
+          Personel sayınızı ve vardiya saatlerinizi iletin; güzergâh planını ve
+          araç ihtiyacını 24 saat içinde çıkarıyoruz.
+        </p>
       </div>
-
-      <div class="grid g-3">
-        <div class="ref">
-          <div class="ref-logo">OSB</div>
-          <span class="sector">Sanayi</span>
-          <b>Organize Sanayi Bölgesi Fabrikası</b>
-          <p>Üç vardiya düzeninde 320 personel için 14 araçlık sabit güzergâh operasyonu.</p>
-          <div class="meta">2019'dan bu yana · 14 araç</div>
-        </div>
-        <div class="ref">
-          <div class="ref-logo">EĞT</div>
-          <span class="sector">Eğitim</span>
-          <b>Özel Eğitim Kurumu</b>
-          <p>Okul servisi ve kurs güzergâhları, rehber personel ve veli bilgilendirme sistemi.</p>
-          <div class="meta">2021'den bu yana · 9 araç</div>
-        </div>
-        <div class="ref">
-          <div class="ref-logo">SAĞ</div>
-          <span class="sector">Sağlık</span>
-          <b>Özel Hastane</b>
-          <p>7/24 vardiya düzeni, gece güzergâhları ve nöbet değişimlerine uyumlu planlama.</p>
-          <div class="meta">2020'den bu yana · 11 araç</div>
-        </div>
-      </div>
-
-      <div style="margin-top:var(--space-8)">
-        <a href="referanslar.html" class="btn-red">Tüm Referanslar <span>›</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec-navy">
-    <div class="wrap">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-8)">
-        <div>
-          <h2 class="h2">Güzergâhınız için teklif alın</h2>
-          <p class="lede">Personel sayınızı ve vardiya saatlerinizi iletin; güzergâh planını ve araç ihtiyacını 24 saat içinde çıkarıyoruz.</p>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:var(--space-6);align-items:center">
-          <a href="iletisim.html" class="btn-red blueprint" style="position:relative;padding:16px 34px;letter-spacing:.2em">
-            Teklif Formu
-            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          </a>
-          <div style="line-height:1.3">
-            <div class="kicker">E-posta</div>
-            <div style="font-family:var(--font-heading);font-size:20px;margin-top:4px">info@klctasimacilik.com</div>
-          </div>
-        </div>
-      </div>
+      <a href="iletisim.html" class="btn-red">Teklif Formu <span>›</span></a>
     </div>
   </section>
 </main>
