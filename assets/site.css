@@ -774,56 +774,6 @@ a.info-box:hover { border-color: var(--brand); transform: translateY(-3px); }
   .h-cta .btn-line { justify-content: center; }
 }
 
-/* --- Güzergâh motifi ---------------------------------------------------- */
-
-.route {
-  position: relative;
-  display: grid;
-  gap: var(--space-6);
-  padding: clamp(20px, 3vw, 28px) clamp(18px, 2.5vw, 26px) clamp(20px, 3vw, 28px) 44px;
-  /* Fotoğrafın üzerine geldiği için kendi zemini olmalı, yoksa okunmuyor */
-  background: rgba(var(--navy-rgb), .72);
-  border-left: 2px solid var(--brand);
-  backdrop-filter: blur(2px);
-}
-/* Dikey hat (mobil) */
-.route::before {
-  content: "";
-  position: absolute;
-  left: 24px; top: clamp(28px, 4vw, 38px); bottom: clamp(28px, 4vw, 38px);
-  width: 2px;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, .5) 0 6px,
-    transparent 6px 12px);
-}
-.route-stop {
-  position: relative;
-  font-family: var(--font-heading);
-  font-size: 15px;
-  letter-spacing: .04em;
-  color: rgba(255, 255, 255, .9);
-}
-.route-stop::before {
-  content: "";
-  position: absolute;
-  left: -26px; top: 50%;
-  translate: 0 -50%;
-  width: 13px; height: 13px;
-  border: 2px solid var(--brand);
-  background: var(--navy);
-  border-radius: 50%;
-}
-.route-stop:last-child::before { background: var(--brand); }
-.route-stop small {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 13px;
-  letter-spacing: 0;
-  color: rgba(255, 255, 255, .58);
-  margin-top: 2px;
-}
-
 /* --- Rakam şeridi (hero ile bölüm arasında oturur) ---------------------- */
 
 .h-stats {
