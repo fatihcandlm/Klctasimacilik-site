@@ -569,6 +569,13 @@ a.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border
 .info-box { border: 1px solid var(--color-divider); background: #fff; padding: var(--space-8) clamp(20px, 2vw, 28px); }
 .info-box .kicker { color: var(--brand); }
 .info-box .val { font-family: var(--font-heading); font-size: clamp(19px, 1.8vw, 24px); margin-top: var(--space-3); color: var(--color-text); display: block; }
+/* Aynı kutuda birden çok telefon numarası */
+a.tel-satir { transition: color .16s; }
+a.tel-satir:hover { color: var(--brand); }
+a.tel-satir + a.tel-satir { margin-top: 4px; }
+@media (hover: none), (max-width: 860px) {
+  a.tel-satir { min-height: 44px; display: flex; align-items: center; }
+}
 a.info-box { color: inherit; transition: border-color .18s, transform .18s; }
 a.info-box:hover { border-color: var(--brand); transform: translateY(-3px); }
 .info-box .note { margin: var(--space-3) 0 0; font-size: 14px; color: var(--color-neutral-700); }
