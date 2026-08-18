@@ -954,3 +954,46 @@ a.info-box:hover { border-color: var(--brand); transform: translateY(-3px); }
      Hamburger'ı logodan önce, satırın başına atıyordu. */
   .burger { order: 0; }
 }
+
+/* ==========================================================================
+   BÖLGE SAYFALARI
+   ========================================================================== */
+
+/* Yakın semt etiketleri */
+.tag-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag-lite {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid var(--color-divider);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: .04em;
+  color: var(--color-neutral-800);
+}
+
+/* Diğer bölgelere iç bağlantılar */
+.bolge-baglantilar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: var(--space-6);
+}
+.bolge-baglantilar a {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: rgba(255, 255, 255, .88);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: .05em;
+  transition: background .16s, border-color .16s;
+}
+.bolge-baglantilar a:hover {
+  background: rgba(255, 255, 255, .1);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Bölge listesindeki elmas işareti düz numaradan farklı hizalanmalı */
+.svc-no { font-variant-numeric: tabular-nums; }
