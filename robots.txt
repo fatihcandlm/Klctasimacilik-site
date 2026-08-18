@@ -1,0 +1,9 @@
+# KLC Taşımacılık
+User-agent: *
+Allow: /
+
+# Arama sonuçlarında yeri olmayan sayfalar
+Disallow: /tesekkurler.html
+Disallow: /404.html
+
+Sitemap: https://klctasimacilik.com/sitemap.xml
